@@ -1,28 +1,33 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import Collections from './components/Collections';
+import Footer from './components/Footer';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-slate-950 selection:bg-white selection:text-slate-900">
+      <Navbar />
+      <main>
+        <Hero />
+        <section id="about" className="relative mx-auto max-w-7xl px-4 py-20">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-slate-200 shadow-xl backdrop-blur">
+              <h3 className="text-2xl font-bold text-white">Crafted With Care</h3>
+              <p className="mt-3 text-slate-300">
+                At White Tex, every roll is a promise of quality. We partner with trusted mills and employ meticulous testing to ensure the hand-feel, weight, and durability you expect.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-white/10 bg-white/5 p-8 text-slate-200 shadow-xl backdrop-blur">
+              <h3 className="text-2xl font-bold text-white">For Makers & Brands</h3>
+              <p className="mt-3 text-slate-300">
+                Whether you are designing a capsule collection or sewing at home, our curated assortment spans essentials to elevated statements—ready to inspire your next piece.
+              </p>
+            </div>
+          </div>
+        </section>
+        <Collections />
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
-
-export default App
